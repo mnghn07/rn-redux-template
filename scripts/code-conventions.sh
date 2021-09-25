@@ -1,0 +1,1 @@
+yarn add --dev prettier eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin eslint-config-airbnb-typescript
