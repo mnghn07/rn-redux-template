@@ -1,0 +1,1 @@
+cd src/containers && mkdir $1 && cd $1 && touch index.tsx && touch styles.ts
