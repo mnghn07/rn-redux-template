@@ -46,7 +46,7 @@
       "configs": ["./src/configs/*", "./src/configs/index.ts"],
       "containers": ["./src/containers/*", "./src/containers/index.ts"],
       "i18n": ["./src/i18n/*", "./src/i18n/index.ts"],
-      "navigation": ["./src/navigation/*", "./src/navigation/index.ts"],
+      "navigation": ["./src/navigation/*", "./src/navigation/index.tsx"],
       "services": ["./src/services/*", "./src/services/index.ts"],
       "stores": ["./src/stores/*", "./src/stores/index.ts"],
       "themes": ["./src/themes/*", "./src/themes/index.ts"],

@@ -18,6 +18,7 @@ import {
   View,
 } from "react-native";
 import { Colors, Fonts } from "themes";
+import Root from "navigation";
 
 const App = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -26,25 +27,7 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.primary : Colors.secondary,
   };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View>
-          <Text
-            style={{
-              fontFamily: Fonts.primary.bold,
-              color: Colors.primary,
-              fontSize: 40,
-            }}>
-            Hello World
-          </Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <Root />;
 };
 
 export default App;
