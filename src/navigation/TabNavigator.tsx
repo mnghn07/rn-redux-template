@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   HomeScreen,
-  ProfileScreen,
+  WishlistScreen,
   NewsfeedScreen,
   CartScreen,
   CategoryScreen,
@@ -15,9 +15,9 @@ const TabNavigator = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Category" component={CategoryScreen} />
-      <Tab.Screen name="Newsfeed" component={NewsfeedScreen} />
+      <Tab.Screen name="Wishlist" component={WishlistScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Newsfeed" component={NewsfeedScreen} />
     </Tab.Navigator>
   );
 };

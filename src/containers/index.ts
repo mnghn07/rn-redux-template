@@ -9,6 +9,7 @@ import ProductDetailScreen from "./ProductDetail";
 import ProfileScreen from "./Profile";
 import SearchScreen from "./Search";
 import SettingScreen from "./Setting";
+import WishlistScreen from "./Wishlist";
 
 export {
   CartScreen,
@@ -22,4 +23,5 @@ export {
   ProfileScreen,
   SearchScreen,
   SettingScreen,
+  WishlistScreen,
 };
