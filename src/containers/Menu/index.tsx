@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { View, Text } from "react-native";
+interface MenuProps {}
 
-interface ProfileProps {}
-
-const ProfileScreen: FunctionComponent<ProfileProps> = props => {
+const MenuScreen: FunctionComponent<MenuProps> = props => {
   return (
     <View style={{ flex: 1 }}>
-      <Text>ProfileScreen</Text>
+      <Text>MenuScreen</Text>
     </View>
   );
 };
 
-export default ProfileScreen;
+export default MenuScreen;

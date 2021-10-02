@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { View, Text } from "react-native";
+interface SettingProps {}
 
-interface ProfileProps {}
-
-const ProfileScreen: FunctionComponent<ProfileProps> = props => {
+const SettingScreen: FunctionComponent<SettingProps> = props => {
   return (
     <View style={{ flex: 1 }}>
-      <Text>ProfileScreen</Text>
+      <Text>SettingScreen</Text>
     </View>
   );
 };
 
-export default ProfileScreen;
+export default SettingScreen;

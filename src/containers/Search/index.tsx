@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { View, Text } from "react-native";
+interface SearchProps {}
 
-interface ProfileProps {}
-
-const ProfileScreen: FunctionComponent<ProfileProps> = props => {
+const SearchScreen: FunctionComponent<SearchProps> = props => {
   return (
     <View style={{ flex: 1 }}>
-      <Text>ProfileScreen</Text>
+      <Text>SearchScreen</Text>
     </View>
   );
 };
 
-export default ProfileScreen;
+export default SearchScreen;

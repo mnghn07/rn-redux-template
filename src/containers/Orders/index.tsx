@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
 import { View, Text } from "react-native";
+interface OrdersProps {}
 
-interface ProfileProps {}
-
-const ProfileScreen: FunctionComponent<ProfileProps> = props => {
+const OrdersScreen: FunctionComponent<OrdersProps> = props => {
   return (
     <View style={{ flex: 1 }}>
-      <Text>ProfileScreen</Text>
+      <Text>OrdersScreen</Text>
     </View>
   );
 };
 
-export default ProfileScreen;
+export default OrdersScreen;
