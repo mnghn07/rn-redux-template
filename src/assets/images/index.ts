@@ -1,4 +1,4 @@
-export default {
+const Images = {
   arrowRight: {
     white: require("./arrow-right/right-arrow-white.png"),
     regular: require("./arrow-right/right-arrow.png"),
@@ -21,4 +21,17 @@ export default {
     outline: require("./tag-heart-outline/tag-heart-outline.png"),
   },
   user: require("./user/user.png"),
+  cart: {
+    regular: require("./cart/cart.png"),
+    heart: require("./cart/cart-heart.png"),
+    add: require("./cart/cart-arrow-down.png"),
+    checkout: require("./cart/cart-arrow-up.png"),
+    continue: require("./cart/cart-arrow-right.png"),
+  },
+  plus: require("./plus/plus.png"),
+  minus: require("./minus/minus.png"),
 };
+
+export type IconTypes = keyof typeof Images;
+
+export default Images;

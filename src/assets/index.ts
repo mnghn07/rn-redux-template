@@ -1,4 +1,4 @@
 import Fonts from "assets/fonts";
-import Images from "assets/images";
+import Images, { IconTypes } from "assets/images";
 
-export { Fonts, Images };
+export { Fonts, Images, IconTypes };
