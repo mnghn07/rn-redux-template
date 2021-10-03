@@ -1,4 +1,4 @@
-export const SHADOW = {
+export const LIGHT_SHADOW = {
   shadowColor: "#000",
   shadowOffset: {
     width: 0,

@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Icon } from "components";
 import { Images } from "assets";
-import { SHADOW } from "utils";
+import { LIGHT_SHADOW } from "utils";
 import { Colors } from "themes";
 
 const TabBar = (props: BottomTabBarProps) => {
@@ -12,10 +12,10 @@ const TabBar = (props: BottomTabBarProps) => {
     <View
       style={{
         flexDirection: "row",
-        ...SHADOW,
         width: "100%",
         height: 50,
         backgroundColor: Colors.background,
+        ...LIGHT_SHADOW,
       }}
     >
       {state.routes.map((route, index) => {
