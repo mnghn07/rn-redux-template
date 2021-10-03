@@ -21,7 +21,8 @@ const ImpersonalStackNavigator = () => {
         />
       </Stack.Group>
       <Stack.Group
-        screenOptions={{ presentation: "modal", gestureEnabled: true }}>
+        screenOptions={{ presentation: "modal", gestureEnabled: true }}
+      >
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
       </Stack.Group>

@@ -7,12 +7,13 @@ import {
   CartScreen,
   CategoryScreen,
 } from "containers";
+import { TabBar } from "components";
 
 const Tab = createBottomTabNavigator();
 
 const MainTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <TabBar {...props} />}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Category" component={CategoryScreen} />
       <Tab.Screen name="Wishlist" component={WishlistScreen} />
