@@ -10,7 +10,7 @@ import {
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const MainTabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
@@ -22,4 +22,4 @@ const TabNavigator = () => {
   );
 };
 
-export default TabNavigator;
+export default MainTabNavigator;
