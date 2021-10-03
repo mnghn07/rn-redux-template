@@ -5,6 +5,8 @@ import MainTabNavigator from "./MainTabNavigator";
 import PersonalTopTabNavigator from "./PersonalTopTabNavigator";
 import ImpersonalStackNavigator from "./ImpersonalStackNavigator";
 
+import { navigationRef } from "./RootNavigation";
+
 const Stack = createNativeStackNavigator();
 
 // Root: MainBottomTab, PersonalTopTab, Im-PersonalStack
@@ -14,7 +16,7 @@ const Stack = createNativeStackNavigator();
 
 const Root = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Group>
           <Stack.Screen name="Main" component={MainTabNavigator} />
@@ -27,11 +29,6 @@ const Root = () => {
             component={ImpersonalStackNavigator}
           />
         </Stack.Group>
-        {/* <Stack.Group
-          screenOptions={{
-            presentation: "containedModal",
-            headerShown: false,
-          }}></Stack.Group> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
