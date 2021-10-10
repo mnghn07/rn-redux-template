@@ -39,7 +39,8 @@ const Metrics = {
   custom: (n: number) => n,
 };
 
-console.log("metrics", Metrics);
+const HEADER_HEIGHT = 50;
+const TABBAR_HEIGHT = 50;
 
 export {
   Spacings,
@@ -51,4 +52,6 @@ export {
   isIPhoneWithMonobrow,
   isIPhoneX,
   isIPhoneXMax,
+  HEADER_HEIGHT,
+  TABBAR_HEIGHT,
 };
