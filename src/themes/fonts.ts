@@ -1,4 +1,4 @@
-export default {
+const Fonts = {
   primary: {
     black: "Roboto-Black",
     blackItalic: "Roboto-BlackItalic",
@@ -26,3 +26,5 @@ export default {
     thinItalic: "Lato-ThinItalic",
   },
 };
+
+export default Fonts;
