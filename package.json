@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "fresh-install": "watchman watch-del-all && rm -rf ios/build/ && rm -rf node_modules/ && rm -rf ios/Pods/ && yarn cache clean && yarn install && cd ios && pod install && cd ../",
     "fresh-start": "yarn run fresh-install && yarn run reset",
+    "reset": "yarn start -- --reset-cache",
     "bundle-ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ios/main.jsbundle",
     "prettier:write": "prettier --write ./src/*",
     "prettier:check": "prettier --check ./src/*"
