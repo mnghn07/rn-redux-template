@@ -6,6 +6,7 @@ import {
   isIPhoneX,
   isIPhoneXMax,
 } from "react-native-status-bar-height";
+import { Constants } from "utils";
 
 // paddings, margins
 const Spacings = {
@@ -33,19 +34,19 @@ const Sizes = {
 };
 
 // others
-const Metrics = {
+const Opacity = {
   buttonOpacity: 0.7,
   opacity: 0.5,
   custom: (n: number) => n,
 };
 
-const HEADER_HEIGHT = 50;
+const HEADER_HEIGHT = 50 + getStatusBarHeight();
 const TABBAR_HEIGHT = 50;
 
 export {
   Spacings,
   Sizes,
-  Metrics,
+  Opacity,
   getStatusBarHeight,
   isIPhone12,
   isIPhone12Max,

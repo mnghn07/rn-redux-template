@@ -10,6 +10,7 @@ const Images = {
   chevron: {
     down: require("./chevron/chevron-down.png"),
     up: require("./chevron/chevron-up.png"),
+    left: require("./chevron/chevron-left.png"),
   },
   close: require("./close/close.png"),
   fire: require("./fire/fire.png"),
