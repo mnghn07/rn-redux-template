@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Icon } from "components";
-import { Images } from "assets";
+import { Images } from "themes";
 import { LIGHT_SHADOW } from "utils";
 import { Colors } from "themes";
 

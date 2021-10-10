@@ -9,24 +9,9 @@
  */
 
 import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from "react-native";
-import { Colors, Fonts } from "themes";
 import Root from "navigation";
 
 const App = () => {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.primary : Colors.secondary,
-  };
-
   return <Root />;
 };
 
