@@ -1,3 +1,4 @@
+import Header from "components/Header";
 import React, { FunctionComponent } from "react";
 import { View, Text, Pressable } from "react-native";
 interface HomeProps {
@@ -10,12 +11,20 @@ const HomeScreen: FunctionComponent<HomeProps> = props => {
   return (
     <View style={{ flex: 1 }}>
       <Text>HomeScreen</Text>
-      <Pressable onPress={() => navigation.navigate("PersonalTab")}>
+      {/* <Pressable onPress={() => navigation.navigate("PersonalTab")}>
         <Text>To Personal</Text>
       </Pressable>
       <Pressable onPress={() => navigation.navigate("ImpersonalStack")}>
         <Text>To Impersonal</Text>
-      </Pressable>
+      </Pressable> */}
+      <Header
+        type="main"
+        shadowed
+        headerLeftType="back"
+        headerRightType="close"
+        headerTitle="Drops"
+        headerTitleAlign="center"
+      />
     </View>
   );
 };

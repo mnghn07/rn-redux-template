@@ -2,9 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Icon } from "components";
-import { Images } from "themes";
-import { LIGHT_SHADOW } from "utils";
-import { Colors } from "themes";
+import { Images, Metrics, Colors } from "themes";
+import { Spacings } from "themes/metrics";
 
 const TabBar = (props: BottomTabBarProps) => {
   const { state, descriptors, navigation } = props;
@@ -13,9 +12,9 @@ const TabBar = (props: BottomTabBarProps) => {
       style={{
         flexDirection: "row",
         width: "100%",
-        height: 50,
+        height: Metrics.TABBAR_HEIGHT,
         backgroundColor: Colors.background,
-        ...LIGHT_SHADOW,
+        ...Colors.LIGHT_SHADOW,
       }}
     >
       {state.routes.map((route, index) => {
@@ -62,8 +61,9 @@ const TabBar = (props: BottomTabBarProps) => {
             onLongPress={onLongPress}
             style={{
               flex: 1,
-              justifyContent: "center",
+              justifyContent: "flex-start",
               alignItems: "center",
+              paddingTop: Spacings.normal,
             }}
             activeOpacity={0.7}
           >
