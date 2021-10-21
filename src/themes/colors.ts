@@ -6,14 +6,15 @@ export default {
   white: "#FFFFFF",
   black: "#000000",
   warning: "#F1981B",
+  transparent: "transparent",
   LIGHT_SHADOW: {
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 0,
     },
     shadowOpacity: 1,
-    shadowRadius: 3,
+    shadowRadius: 2,
     elevation: 2,
   },
 };

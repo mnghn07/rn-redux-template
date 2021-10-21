@@ -1,5 +1,11 @@
 import React, { FunctionComponent } from "react";
-import { View, Text, TouchableOpacity, ViewStyle } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+  Animated,
+} from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { Icon } from "components";
 import { Colors, Images, Metrics } from "themes";
@@ -12,11 +18,13 @@ interface HeaderProps {
   // !override for left header button
   headerLeftType?: string;
   headerLeft?: React.ReactNode;
+  headerLeftStyle?: ViewStyle | ViewStyle[];
   onLeftPress?: () => void;
 
   // !override for right header button
   headerRightType?: string;
   headerRight?: React.ReactNode;
+  headerRightStyle?: ViewStyle | ViewStyle[];
   onRightPress?: () => void;
 
   // !override for header title button
@@ -26,9 +34,11 @@ interface HeaderProps {
   onTitlePress?: () => void;
 
   // !more configurations for headers
-  extendedBar?: React.ReactNode;
+  extendedHeader?: React.ReactNode;
   shadowed?: boolean;
   transparent?: boolean;
+
+  // !styles
 }
 
 const Header: FunctionComponent<HeaderProps> = (props: HeaderProps) => {
@@ -40,8 +50,10 @@ const Header: FunctionComponent<HeaderProps> = (props: HeaderProps) => {
     headerLeftType,
     headerRightType,
     headerTitleAlign,
+    headerLeftStyle,
+    headerRightStyle,
     headerTitleStyle,
-    extendedBar,
+    extendedHeader,
     shadowed,
     transparent,
     onLeftPress,
@@ -50,41 +62,70 @@ const Header: FunctionComponent<HeaderProps> = (props: HeaderProps) => {
   } = props;
   const navigation = useNavigation();
   const goBack = () => (navigation.canGoBack() ? navigation.goBack() : true);
+
+  const transparentStyle: ViewStyle = { backgroundColor: Colors.transparent };
+  const titleStyle: ViewStyle = {};
   return (
-    <View
-      style={{
-        width: "100%",
-        height: Metrics.HEADER_HEIGHT,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: Colors.warning,
-        paddingTop: getStatusBarHeight(),
-      }}
-    >
-      {headerLeft || null}
-      {headerLeftType === "back" && (
-        <TouchableOpacity onPress={onLeftPress} disabled={!onLeftPress}>
-          <Icon icon={Images.chevron.left} />
-        </TouchableOpacity>
-      )}
-      <TouchableOpacity
+    <>
+      <Animated.View
         style={[
-          headerTitleAlign === "left" && { flex: 1 },
-          headerTitleAlign === "right" && { alignItems: "flex-end" },
-          headerTitleAlign === "center" && { flex: 1, alignItems: "center" },
+          {
+            flex: 1,
+            width: "100%",
+            height: Metrics.HEADER_HEIGHT,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: Colors.warning,
+            paddingTop: Metrics.getStatusBarHeight(true),
+          },
+          shadowed && Colors.LIGHT_SHADOW,
+          transparent && transparentStyle,
         ]}
-        onPress={onTitlePress}
-        disabled={!onTitlePress}
       >
-        <Text style={headerTitleStyle}>{headerTitle}</Text>
-      </TouchableOpacity>
-      {headerRight || null}
-    </View>
+        {headerLeft || null}
+        {headerLeftType === "back" && (
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={headerLeftStyle}
+            onPress={onLeftPress}
+            disabled={!onLeftPress}
+          >
+            <Icon icon={Images.chevron.left} />
+          </TouchableOpacity>
+        )}
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={[
+            headerTitleAlign === "left" && { flex: 1 },
+            headerTitleAlign === "right" && { flex: 1, alignItems: "flex-end" },
+            headerTitleAlign === "center" && { flex: 1, alignItems: "center" },
+          ]}
+          onPress={onTitlePress}
+          disabled={!onTitlePress}
+        >
+          <Text style={headerTitleStyle} numberOfLines={1} ellipsizeMode="tail">
+            {headerTitle}
+          </Text>
+        </TouchableOpacity>
+        {headerRight || null}
+        {headerRightType === "close" && (
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={headerRightStyle}
+            onPress={onRightPress}
+            disabled={!onRightPress}
+          >
+            <Icon icon={Images.close} />
+          </TouchableOpacity>
+        )}
+      </Animated.View>
+      {extendedHeader}
+    </>
   );
 };
 

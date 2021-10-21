@@ -60,4 +60,4 @@ buck-out/
 
 # Visual Studio Code
 #
-.vscode/
+.vscode/*
