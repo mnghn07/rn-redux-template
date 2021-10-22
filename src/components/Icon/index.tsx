@@ -40,9 +40,8 @@ const Icon: FunctionComponent<IconProps> = props => {
   }
 
   const imageStyles = {
-    width: 24,
-    height: 24,
-    iconSize,
+    width: iconSize,
+    height: iconSize,
     justifyContent: "center",
     alignItems: "center",
     ...style,

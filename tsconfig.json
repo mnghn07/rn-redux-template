@@ -41,7 +41,7 @@
     "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
     "paths": {
       "*": ["./src/*"],
-      "assets": ["./src/assets/*", "./src/assets/index.ts"],
+      "assets": ["./src/assets/*"],
       "components": ["./src/components/*", "./src/components/index.ts"],
       "configs": ["./src/configs/*", "./src/configs/index.ts"],
       "containers": ["./src/containers/*", "./src/containers/index.ts"],
