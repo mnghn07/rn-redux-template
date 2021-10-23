@@ -1,0 +1,20 @@
+# Testing everytime pushed to develop
+name: testing-ci
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  fetch_and_check_out:
+    name: Fetch & checkout
+    runs-on: macos-latest
+    steps:
+      - name: Echo
+        env:
+          AUTHOR_NAME: Minh Nguyen
+        run: echo Hi $AUTHOR_NAME
+      - name: Checkout jobs
+        uses: actions/checkout@v2
+  test:
+    name: Testing
+    runs-on: macos-latest
