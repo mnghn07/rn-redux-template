@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@master
       - name: Install dependencies && node_modules
         run: |
-          yarn install -g && ls -l
+          yarn install
 
       - name: Testing ci
         run: |

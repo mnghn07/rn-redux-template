@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { View, Text, Pressable } from "react-native";
 interface HomeProps {
-  navigation: any;
-  route: any;
+  navigation?: any;
+  route?: any;
 }
 
 const HomeScreen: FunctionComponent<HomeProps> = props => {
