@@ -14,18 +14,18 @@ jobs:
           AUTHOR_NAME: Minh Nguyen
         run: |
           echo Hi $AUTHOR_NAME
-      - uses: actions/checkout@v2
-      - name: Checkout jobs
-        run: |
-          git checkout master && git fetch origin && git pull
   test:
     name: Testing
     runs-on: macos-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - uses: actions/setup-node@master
-      - name: Install dependencies
+      - name: Install dependencies && node_modules
         run: |
           yarn install -g && ls -l
+
       - name: Testing ci
         run: |
           yarn test
